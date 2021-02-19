@@ -1,0 +1,24 @@
+﻿@model ProductMVC.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<center>
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Login"))
+    {
+
+        @Html.TextBoxFor(m => m.Username, new { placeholder = "Username", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "error" })
+        <br />
+
+        @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+        <br />
+        <input type="Submit" value="Login" />
+    }
+</center>
+<style>
+    .field-validation-error {
+        color: Red;
+    }
+</style>
